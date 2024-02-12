@@ -24,25 +24,23 @@ The goal with `drf-ecommerce-api` is to provide a client user with e-commerce JS
    
 - Clone repository
 
-  `git clone git@github.com:backendkolawole/node-taskmanager-api.git`
+  `git clone git@github.com:backendkolawole/drf-ecommerce-api.git`
 
-- Install packages
+- Install all the packages listed in your requirements.txt file
 
-  `npm install`
+  `pip install -r requirements.txt`
 
-- Create a .env file in the root directory
+- In the same directory as settings.py, create a file called `.env`
 
-  - Set up `MONGO_URI` variable equal to the DB connection string
-  - Set up `PORT` variable
-  - Set up `JWT_SECET` variable
+  - Set up `SECRET_KEY` variable
 
 
 
 ## Endpoints
 
-**GET /task**
+**GET /products**
 
-Call this endpoint to get all tasks
+Call this endpoint to get all products
 
 - Possible responses
 
@@ -50,17 +48,13 @@ Call this endpoint to get all tasks
 200 (OK)
 
 {
-    "tasks": []
+    "products": []
 }
 
 
-401 (Unauthorized)
-
-Unauthorized
-
 ```
 
-**GET /tasks/:id**
+**GET /products/:id**
 
 Call this endpoint to get a task with a specific id
 
@@ -77,11 +71,6 @@ Possible responses
         "__v": 0
     }
 }
-
-
-401 Unauthorized
-
-Unauthorized
 
 
 404 (Not Found)
