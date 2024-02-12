@@ -22,9 +22,21 @@ The goal with `drf-ecommerce-api` is to provide a client user with e-commerce JS
 
   `cd desktop`
    
-- Clone repository
+- Clone this repository
 
   `git clone git@github.com:backendkolawole/drf-ecommerce-api.git`
+
+- Change current directory
+
+  `cd drf-ecommerce-api`
+
+- Create a virtual environment
+
+  `python -m venv myvirtualenv`
+  
+- Activate virutal environment
+
+  `myvirtualenv\Scripts\activate`
 
 - Install all the packages listed in your requirements.txt file
 
@@ -34,9 +46,15 @@ The goal with `drf-ecommerce-api` is to provide a client user with e-commerce JS
 
   - Set up `SECRET_KEY` variable
 
+> [!WARNING]
+> `SECRET_KEY` is the key to securing signed data – it is vital you keep this secure, or attackers could use it to generate their own signed values.
+
 
 
 ## Endpoints
+
+For the endpoints that follow, the base path is shown as `/api/v1`
+
 
 **GET /products**
 
@@ -47,39 +65,17 @@ Call this endpoint to get all products
 ```
 200 (OK)
 
-{
-    "products": []
-}
-
-
-```
-
-**GET /products/:id**
-
-Call this endpoint to get a task with a specific id
-
-Possible responses
-
-```
-200 (OK)
-
-{
-    "task": {
-        "_id": "65c9f0aa2ffa276952e09bb9",
-        "name": "first task",
-        "completed": true,
-        "__v": 0
+[
+    {
+        "id": 1,
+        "company": "liddy",
+        "name": "First Product",
+        "price": 4,
+        "rating": 4,
+        "featured": false,
+        "created": "2023-12-19"
     }
-}
+]
 
-
-404 (Not Found)
-
-{
-    "msg": "No task with id: 65c9f0aa2ffa276952e09bb9"
-}
 
 ```
-
-
-## Contact
