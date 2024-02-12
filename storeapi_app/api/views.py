@@ -11,10 +11,6 @@ class ProductList(generics.ListAPIView):
     search_fields = ['=featured', '=company', '$name']
     
     def get_queryset(self):
-        """
-        Optionally restricts the returned purchases to a given user,
-        by filtering against a `username` query parameter in the URL.
-        """
         queryset = Product.objects.all()
         featured = self.request.query_params.get('featured')
         if featured is not None:
